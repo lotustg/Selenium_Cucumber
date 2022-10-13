@@ -7,9 +7,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin={"html:target\\cucumber-reports.html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml" },
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@All1",  //iki grubu aynı anda calistirmak istersek @gp1 or @gp2 yapariz
+        tags = "@gp5",  //iki grubu aynı anda calistirmak istersek @gp1 or @gp2 yapariz
         dryRun =false  //true yaparsak eksik step definitionsları buluruz
 )
 
